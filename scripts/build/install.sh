@@ -46,7 +46,6 @@ function install_os_packages {
         libmysqlclient-dev \
         rsync \
         build-essential \
-        # snakebite with keberos
         libkrb5-dev \
         cyrus-sasl2-mit-dbg \
         libsasl2-modules-gssapi-mit
