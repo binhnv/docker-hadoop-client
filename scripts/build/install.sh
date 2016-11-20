@@ -45,7 +45,11 @@ function install_os_packages {
         libsasl2-dev \
         libmysqlclient-dev \
         rsync \
-        build-essential
+        build-essential \
+        # snakebite with keberos
+        libkrb5-dev \
+        cyrus-sasl2-mit-dbg \
+        libsasl2-modules-gssapi-mit
 }
 
 function install_python_packages {
@@ -54,7 +58,7 @@ function install_python_packages {
     pip install \
         pyhocon==${g_pyhocon_ver} \
         impyla==${g_impyla_version} \
-        snakebite==${g_snakebite_version} \
+        snakebite[kerberos]==${g_snakebite_version} \
         cheetah==${g_cheetah_version} \
         redis==${g_redis_version} \
         SQLAlchemy==${g_sqlalchemy_version} \
