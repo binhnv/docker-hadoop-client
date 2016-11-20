@@ -15,6 +15,7 @@ g_cheetah_version="2.4.4"
 g_redis_version="2.10.3"
 g_sqlalchemy_version="1.0.14"
 g_setuptools_version="24.0.2"
+g_thrift_sasl_version="0.2.1"
 
 g_spark_home=${SPARK_HOME}
 g_sqoop_home=${SQOOP_HOME}
@@ -66,7 +67,8 @@ function install_python_packages {
         vertica-python==${g_vertica_python_ver} \
         iso8601==${g_iso8601_version} \
         click==${g_click_version} \
-        click_log==${g_click_log_version}
+        click_log==${g_click_log_version} \
+        thirft_sasl==${g_thrift_sasl_version}
 }
 
 function cleanup {
