@@ -30,6 +30,7 @@ function install_spark {
     mkdir -p ${g_spark_home}
     curl -sL ${g_spark_bin_url} | tar -xz -C ${g_spark_home}
     ln -s ${g_hive_conf_dir}/hive-site.xml ${g_spark_conf_dir}/hive-site.xml
+    # make spark-submit command available
     ln -s ${g_spark_home}/bin/spark-submit /usr/bin/spark-submit
 }
 
@@ -38,6 +39,7 @@ function install_sqoop {
     mkdir -p ${g_sqoop_home}
     curl -sL ${g_sqoop_bin_url} | tar -xz -C ${g_sqoop_home} --strip-component=1
     ln -s ${g_mysql_connector_jar} ${g_sqoop_home}/lib/mysql-connector-java.jar
+    # make sqoop command available
     ln -s ${g_sqoop_home}/bin/sqoop /usr/bin/sqoop
 }
 
@@ -70,7 +72,7 @@ function install_python_packages {
         iso8601==${g_iso8601_version} \
         click==${g_click_version} \
         click_log==${g_click_log_version} \
-        thirft_sasl==${g_thrift_sasl_version}
+        thrift_sasl==${g_thrift_sasl_version}
 }
 
 function cleanup {
