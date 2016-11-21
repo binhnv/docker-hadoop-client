@@ -30,13 +30,15 @@ function install_spark {
     mkdir -p ${g_spark_home}
     curl -sL ${g_spark_bin_url} | tar -xz -C ${g_spark_home}
     ln -s ${g_hive_conf_dir}/hive-site.xml ${g_spark_conf_dir}/hive-site.xml
+    ln -s ${g_spark_home}/bin/spark-submit /usr/bin/spark-submit
 }
 
 function install_sqoop {
     echo "Downloading Sqoop from ${g_sqoop_bin_url}..."
     mkdir -p ${g_sqoop_home}
     curl -sL ${g_sqoop_bin_url} | tar -xz -C ${g_sqoop_home} --strip-component=1
-    ln -s ${g_mysql_connector_jar} ${g_spark_home}/lib/mysql-connector-java.jar
+    ln -s ${g_mysql_connector_jar} ${g_sqoop_home}/lib/mysql-connector-java.jar
+    ln -s ${g_sqoop_home}/bin/sqoop /usr/bin/sqoop
 }
 
 function install_os_packages {
