@@ -1,7 +1,7 @@
 FROM binhnv/hive-base
 MAINTAINER "Binh Van Nguyen<binhnv80@gmail.com>"
 
-ENV SPARK_VERSION="1.6.0" \
+ENV SPARK_VERSION="1.6.2" \
     SPARK_HOME="${MY_APP_DIR}/spark" \
     SPARK_MASTER="local" \
     SPARK_DRIVER_MEMORY="512m" \
