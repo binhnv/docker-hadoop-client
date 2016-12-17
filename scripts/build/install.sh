@@ -24,6 +24,8 @@ g_sqoop_bin_url=${SQOOP_BIN_URL}
 g_spark_conf_dir=${SPARK_CONF_DIR}
 g_hive_conf_dir=${HIVE_CONF_DIR}
 g_mysql_connector_jar=${MYSQL_CONNECTOR_JAR}
+g_flink_home=${FLINK_HOME}
+g_flink_bin_url=${FLINK_BIN_URL}
 
 function install_spark {
     echo "Downloading Spark from ${g_spark_bin_url}..."
@@ -41,6 +43,14 @@ function install_sqoop {
     ln -s ${g_mysql_connector_jar} ${g_sqoop_home}/lib/mysql-connector-java.jar
     # make sqoop command available
     ln -s ${g_sqoop_home}/bin/sqoop /usr/bin/sqoop
+}
+
+function install_flink {
+    echo "Downloading ${g_flink_bin_url}..."
+    mkdir -p ${g_flink_home}
+    curl -sL ${g_flink_bin_url} | tar -xz -C ${g_flink_home} --strip-component=1
+    # make flink command available
+    ln -s ${g_flink_home}/bin/flink /usr/bin/flink
 }
 
 function install_os_packages {
@@ -87,6 +97,7 @@ function main {
     install_python_packages
     install_spark
     install_sqoop
+    install_flink
     cleanup
 }
 
