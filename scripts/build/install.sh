@@ -34,6 +34,7 @@ function install_spark {
     ln -s ${g_hive_conf_dir}/hive-site.xml ${g_spark_conf_dir}/hive-site.xml
     # make spark-submit command available
     ln -s ${g_spark_home}/bin/spark-submit /usr/bin/spark-submit
+    ln -s ${g_mysql_connector_jar} ${g_spark_home}/lib/mysql-connector-java.jar
 }
 
 function install_sqoop {
