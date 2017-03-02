@@ -16,6 +16,7 @@ g_redis_version="2.10.3"
 g_sqlalchemy_version="1.0.14"
 g_setuptools_version="24.0.2"
 g_thrift_sasl_version="0.2.1"
+g_thrift_version="0.9.3"
 
 g_spark_home=${SPARK_HOME}
 g_sqoop_home=${SQOOP_HOME}
@@ -70,6 +71,7 @@ function install_os_packages {
 function install_python_packages {
     pip uninstall setuptools
     pip install setuptools==${g_setuptools_version}
+    pip install thrift==${g_thrift_version}
     pip install \
         pyhocon==${g_pyhocon_ver} \
         impyla==${g_impyla_version} \
