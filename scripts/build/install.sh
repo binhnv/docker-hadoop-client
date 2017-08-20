@@ -35,7 +35,7 @@ g_flink_bin_url=${FLINK_BIN_URL}
 function install_spark {
     echo "Downloading ${g_spark_bin_url}..."
     mkdir -p ${g_spark_home}
-    curl -sL ${g_spark_bin_url} | tar -xz -C ${g_spark_home}
+    curl -sL ${g_spark_bin_url} | tar -xzC ${g_spark_home} --strip-components=1
     ln -s ${g_hive_conf_dir}/hive-site.xml ${g_spark_conf_dir}/hive-site.xml
     # make spark-submit command available
     ln -s ${g_spark_home}/bin/spark-submit /usr/bin/spark-submit

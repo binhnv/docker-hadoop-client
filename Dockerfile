@@ -1,7 +1,7 @@
 FROM binhnv/hive-base
 MAINTAINER "Binh Van Nguyen<binhnv80@gmail.com>"
 
-ENV SPARK_VERSION="1.6.2" \
+ENV SPARK_VERSION="1.6.3" \
     SPARK_HOME="${MY_APP_DIR}/spark" \
     SPARK_MASTER="local" \
     SPARK_DRIVER_MEMORY="512m" \
@@ -12,7 +12,7 @@ ENV SPARK_VERSION="1.6.2" \
     FLINK_HOME="${MY_APP_DIR}/flink"
 
 ENV SPARK_CONF_DIR="${SPARK_HOME}/conf" \
-    SPARK_BIN_URL="https://github.com/binhnv/spark-binaries/releases/download/v${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-with-hive.tar.gz" \
+    SPARK_BIN_URL="https://github.com/binhnv/spark-binaries/releases/download/v${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop-2.7.3.tgz" \
     SQOOP_BIN_URL="http://archive.apache.org/dist/sqoop/${SQOOP_VERSION}/sqoop-${SQOOP_VERSION}.bin__hadoop-2.0.4-alpha.tar.gz" \
     FLINK_BIN_URL="http://archive.apache.org/dist/flink/flink-${FLINK_VERSION}/flink-${FLINK_VERSION}-bin-hadoop27-scala_2.10.tgz"
 
