@@ -1,4 +1,4 @@
-FROM binhnv/hive-base
+FROM binhnv/hive-base:1.0.3
 MAINTAINER "Binh Van Nguyen<binhnv80@gmail.com>"
 
 ENV SPARK_VERSION="1.6.3" \
